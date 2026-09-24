@@ -1,0 +1,25 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let type of products()">
+    <tr>
+      <td colspan="5">{{ type.CustomerTypeId }} - {{ type.CustomterTypeName }}</td>
+    </tr>
+    <tr *ngFor="let c of type.Customers">
+      <td>{{ c.Id }}</td>
+      <td>{{ c.Name }}</td>
+      <td>{{ c.Email }}</td>
+      <td>{{ c.Age }}</td>
+      <td>
+        <img [src]="c.Image" alt="Avatar" width="100" height="100" />
+      </td>
+    </tr>
+  </tbody>
+</table>
